@@ -82,7 +82,7 @@ json
 {
   "success"	: "false",
   "message"	: "that email is taken",
-  "data" 	:	[]
+  "data" 	: []
 }
 ```
 
@@ -91,7 +91,7 @@ json
 {
   "success"	: "false",
   "message"	: "this phone number already used",
-  "data" 	:	[]
+  "data" 	: []
 }
 ```
 
@@ -145,7 +145,7 @@ json
 {
   "success"	: "true",
   "message"	: "user verificated",
-  "data" 	:	[]
+  "data" 	: []
 }
 ```
    
@@ -154,6 +154,6 @@ json
 {
   "success"	: "false",
   "message"	: "verification user failed",
-  "data" 	:	[]
+  "data" 	: []
 }
 ```
