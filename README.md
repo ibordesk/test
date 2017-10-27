@@ -98,7 +98,8 @@ json
 ### Login User
 > POST */login*
 
-***Request: {NEED HEADER AUTH} ***  
+***Request: ***  
+*Need header auth
 
 | HEADER (BASIC) | Describe 											|
 | -----				| -------- 											|
@@ -120,13 +121,39 @@ json
 ```
    
 - **Login Gagal** `STATUS:401`
+```json```
 
 ---------------
 
 ### Activation User
 > POST */user_activation*
 
+***Request: ***  
+*Need header auth
+
+| PARAM (RAW) | Describe 											|
+| -----				| -------- 											|
+| code 				| Code from mail (required) 					|
+
+
+
+***Response:***   
+- **Aktivasi Berhasil** `STATUS:200`
+```json
+{
+  "success"	: "true",
+  "message"	: "user verificated",
+  "data" 		:	[]
+}
+```
+   
+- **Aktivasi Gagal** `STATUS:400`
+```json
+{
+  "success"	: "false",
+  "message"	: "verification user failed",
+  "data" 		:	[]
+}```
 
 ---------------
-
 
