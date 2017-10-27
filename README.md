@@ -98,21 +98,17 @@ json
 ### Login User
 > POST */login*
 
-***Request HEADER (BASIC) & PARAM (RAW)***  
+***NEED HEADER AUTH ***  
+
 | HEADER (BASIC) | Describe 											|
 | -----				| -------- 											|
 | email 				| Email User (required) 					|
 | password 			| Password User (required) 						|
-| -----				| -------- 											|
-| Param (RAW) | Describe 											|
-| -----				| -------- 											|
-| code 				| OTP Code Via Email (required) 					|
-| -----				| -------- 											|
 
 
 
 ***Response JSON:***   
-- **Registrasi Berhasil** `200`
+- **Login Berhasil** `200`
 ```json
 {
     "success": "true",
@@ -122,6 +118,8 @@ json
     }
 }
 ```
+   
+- **Login Gagal** `401`
 
 ---------------
 
