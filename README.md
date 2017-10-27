@@ -153,7 +153,5 @@ json
   "success"	: "false",
   "message"	: "verification user failed",
   "data" 		:	[]
-}```
-
----------------
-
+}
+```
