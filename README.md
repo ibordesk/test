@@ -15,7 +15,7 @@
 - [ ] [Setting Profile]
 
 ---------------------------------------
-### App Version  :cekappver:
+### Check App Version  :cekappver:
 ---------------------------------------
 ```
 POST /check_version
