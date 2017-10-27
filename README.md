@@ -3,10 +3,10 @@
 
 ## Contents
 
-- [Check App Version](#check-app-version--cekappver)[x] 
-- [x] [Registration](#registration-register)
+- [x] [Check App Version](#check-app-version-cekappver)
+- [x] [Registration](#registration--register)
 - [x] [Login](#login-log_in)
-- [x] [Activation User](#activation-user-active_user)
+- [x] [Activation User](#activation-user--active_user)
 - [ ] [Dashboard]
 - [ ] [Order Progress]
 - [ ] [Order Complete]
@@ -14,7 +14,7 @@
 - [ ] [Order Process]
 - [ ] [Setting Profile]
 
-### Check App Version  :cekappver:
+### Check App Version :cekappver:
 
 ```
 POST /check_version
