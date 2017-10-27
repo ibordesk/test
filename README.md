@@ -19,7 +19,7 @@
 ### Check App Version
 
 > POST /check_version
------
+
 ***Request RAW JSON***
 
 | Param (RAW) | Describe 							|
@@ -47,6 +47,9 @@ json
     "data": []
 }
 ```
+
+-------
+
 ### Registration User 
 
 > POST /register 
@@ -94,10 +97,14 @@ json
 
 ### Login User
 > POST */login*
+
+
 ---------------
 
 ### Activation User
 > POST */user_activation*
+
+
 ---------------
 
 
