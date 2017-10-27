@@ -18,7 +18,7 @@
 
 ### Check App Version
 
-> POST /check_version
+> POST */check_version*
 
 ***Request RAW JSON***
 
@@ -52,7 +52,7 @@ json
 
 ### Registration User 
 
-> POST /register 
+> POST */register*
 
 ***Request RAW JSON***  
 
@@ -98,6 +98,30 @@ json
 ### Login User
 > POST */login*
 
+***Request HEADER (BASIC) & PARAM (RAW)***  
+| HEADER (BASIC) | Describe 											|
+| -----				| -------- 											|
+| email 				| Email User (required) 					|
+| password 			| Password User (required) 						|
+| -----				| -------- 											|
+| Param (RAW) | Describe 											|
+| -----				| -------- 											|
+| code 				| OTP Code Via Email (required) 					|
+| -----				| -------- 											|
+
+
+
+***Response JSON:***   
+- **Registrasi Berhasil** `200`
+```json
+{
+    "success": "true",
+    "message": "unverified",
+    "data": {
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyMTFAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjNhNTUxZmE5Nzk2NzVmNTJlMDkzOGIwNWFiMThiZjliN2Q3ZDMzNTdlNGFhNDI3MDFkM2M5NzRlNzk2MTJhZWZlNTIxNjg5M2Q0MzUxZDNkIiwibGFzdF9sb2dpbiI6IjIwMTctMTAtMjcgMDY6MTU6MzkifQ.LmDNWZ3zyOaepGHoOUl-UCjp1Gwazzu8u8q1PoIqQBU"
+    }
+}
+```
 
 ---------------
 
