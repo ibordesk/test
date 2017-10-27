@@ -109,7 +109,7 @@ json
 
 
 ***Response:***   
-- **Login Berhasil** `STATUS:200`
+- **Login Berhasil, User Belum Terverifikasi** `STATUS:200`
 ```json
 {
     "success": "true",
@@ -119,7 +119,18 @@ json
     }
 }
 ```
-   
+
+- **Login Berhasil, User Sudah Terverifikasi** `STATUS:200`
+```json
+{
+    "success": "true",
+    "message": "verified",
+    "data": {
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyMTFAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjNhNTUxZmE5Nzk2NzVmNTJlMDkzOGIwNWFiMThiZjliN2Q3ZDMzNTdlNGFhNDI3MDFkM2M5NzRlNzk2MTJhZWZlNTIxNjg5M2Q0MzUxZDNkIiwibGFzdF9sb2dpbiI6IjIwMTctMTAtMjcgMDY6MTU6MzkifQ.LmDNWZ3zyOaepGHoOUl-UCjp1Gwazzu8u8q1PoIqQBU"
+    }
+}
+```
+
 - **Login Gagal** `STATUS:401`
 ```
 json
