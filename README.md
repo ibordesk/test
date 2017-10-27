@@ -14,9 +14,8 @@
 - [ ] [Order Process]
 - [ ] [Setting Profile]
 
----------------------------------------
 ### Check App Version  :cekappver:
----------------------------------------
+
 ```
 POST /check_version
 ```
