@@ -20,16 +20,16 @@
 
 > POST */check_version*
 
-***Request RAW JSON***
+***Request:***
 
 | Param (RAW) | Describe 							|
 | -----				| -------- 							|
 | application	| Aplikasi (required) 	|
 | version			| Versi (required) 			|
 
-***Response JSON***
+***Response:***
 
-**New app version** `200`
+**New app version** `STATUS:200`
 ```json
 {
     "success": "true",
@@ -38,7 +38,7 @@
 } 
 ```
 
-**No Update version** `200`
+**No Update version** `STATUS:200`
 ```
 json
 {
@@ -54,7 +54,7 @@ json
 
 > POST */register*
 
-***Request RAW JSON***  
+***Request:***  
 
 | Param (RAW) | Describe 											|
 | -----				| -------- 											|
@@ -65,8 +65,8 @@ json
 
 
 
-***Response JSON:***   
-- **Registrasi Berhasil** `200`
+***Response:***   
+- **Registrasi Berhasil** `STATUS:200`
 ```json
 {
     "success": "true",
@@ -77,7 +77,7 @@ json
 }
 ```
 
-- **Email tidak bisa digunakan** `400`
+- **Email tidak bisa digunakan** `STATUS:400`
 ```json
 {
   "success"	: "false",
@@ -86,7 +86,7 @@ json
 }
 ```
 
-- **Telepon tidak bisa digunakan** `400`
+- **Telepon tidak bisa digunakan** `STATUS:400`
 ```json
 {
   "success"	: "false",
@@ -98,7 +98,7 @@ json
 ### Login User
 > POST */login*
 
-***NEED HEADER AUTH ***  
+***Request: {NEED HEADER AUTH} ***  
 
 | HEADER (BASIC) | Describe 											|
 | -----				| -------- 											|
@@ -107,8 +107,8 @@ json
 
 
 
-***Response JSON:***   
-- **Login Berhasil** `200`
+***Response:***   
+- **Login Berhasil** `STATUS:200`
 ```json
 {
     "success": "true",
@@ -119,7 +119,7 @@ json
 }
 ```
    
-- **Login Gagal** `401`
+- **Login Gagal** `STATUS:401`
 
 ---------------
 
