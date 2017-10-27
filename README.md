@@ -3,7 +3,7 @@
 
 ## Contents
 
-- [x] [Check App Version](#check-app-version-cekappver)
+- [Check App Version](#check-app-version-cekappver)[x] 
 - [x] [Registration](#registration-register)
 - [x] [Login](#login-log_in)
 - [x] [Activation User](#activation-user-active_user)
