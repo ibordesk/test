@@ -1,5 +1,6 @@
 # API ALONDRY
 > Url prefix  : *{sitename}*/api/user
+----------------------------
 
 ## Contents
 
@@ -14,18 +15,20 @@
 - [ ] [Order Process]
 - [ ] [Setting Profile]
 
+-----------
+
 ### Check App Version
 
 > POST /check_version
 -----
-*Request RAW JSON*
+***Request RAW JSON***
 
 | Param (RAW) | Describe 							|
 | -----				| -------- 							|
 | application	| Aplikasi (required) 	|
 | version			| Versi (required) 			|
 
-*Response JSON*
+***Response JSON***
 
 Success %200
 
@@ -50,8 +53,8 @@ json
 ### Registration User 
 
 > POST /register 
------
-*Request RAW JSON*  
+
+***Request RAW JSON***  
 
 | Param (RAW) | Describe 											|
 | -----				| -------- 											|
@@ -62,8 +65,8 @@ json
 
 
 
-*Response : JSON*   
-**Registrasi Berhasil** %200
+***Response JSON:***   
+- **Registrasi Berhasil** %200
 ```json
 {
     "success": "true",
@@ -74,7 +77,7 @@ json
 }
 ```
 
-**Email tidak bisa digunakan** %400
+- **Email tidak bisa digunakan** %400
 ```json
 {
   "success"	: "false",
@@ -83,7 +86,7 @@ json
 }
 ```
 
-**Telepon tidak bisa digunakan** %400
+- **Telepon tidak bisa digunakan** %400
 ```json
 {
   "success"	: "false",
