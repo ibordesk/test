@@ -1,6 +1,5 @@
 # API ALONDRY
 > Url prefix  : *{sitename}*/api/user
-----------------------------
 
 ## Contents
 
@@ -30,9 +29,7 @@
 
 ***Response JSON***
 
-Success %200
-
-**New app version***
+**New app version** `200`
 ```json
 {
     "success": "true",
@@ -41,7 +38,7 @@ Success %200
 } 
 ```
 
-**No Update version***
+**No Update version** `200`
 ```
 json
 {
@@ -66,7 +63,7 @@ json
 
 
 ***Response JSON:***   
-- **Registrasi Berhasil** %200
+- **Registrasi Berhasil** `200`
 ```json
 {
     "success": "true",
@@ -77,7 +74,7 @@ json
 }
 ```
 
-- **Email tidak bisa digunakan** %400
+- **Email tidak bisa digunakan** `400`
 ```json
 {
   "success"	: "false",
@@ -86,7 +83,7 @@ json
 }
 ```
 
-- **Telepon tidak bisa digunakan** %400
+- **Telepon tidak bisa digunakan** `400`
 ```json
 {
   "success"	: "false",
