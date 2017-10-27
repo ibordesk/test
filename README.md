@@ -4,9 +4,9 @@
 ## Contents
 
 - [x] [Check App Version](#check-app-version)
-- [x] [Registration](#registration--register)
-- [x] [Login](#login-log_in)
-- [x] [Activation User](#activation-user--active_user)
+- [x] [Registration User](#registration-user)
+- [x] [Login User](#login-user)
+- [x] [Activation User](#activation-user)
 - [ ] [Dashboard]
 - [ ] [Order Progress]
 - [ ] [Order Complete]
@@ -16,10 +16,9 @@
 
 ### Check App Version
 
-```
-POST /check_version
-```
-*Request*
+> POST /check_version
+-----
+*Request RAW JSON*
 
 | Param (RAW) | Describe 							|
 | -----				| -------- 							|
@@ -30,14 +29,16 @@ POST /check_version
 
 Success %200
 
-New app version
+**New app version***
 ```json
 {
     "success": "true",
     "message": "new version available",
     "data": []
-} ```
-No Update version
+} 
+```
+
+**No Update version***
 ```
 json
 {
@@ -46,13 +47,11 @@ json
     "data": []
 }
 ```
----------------------------------------
-### Register  
----------------------------------------
-```
-POST /register 
-```
-Request  
+### Registration User 
+
+> POST /register 
+-----
+*Request RAW JSON*  
 
 | Param (RAW) | Describe 											|
 | -----				| -------- 											|
@@ -63,8 +62,8 @@ Request
 
 
 
-Response JSON   
-Success 200
+*Response : JSON*   
+**Registrasi Berhasil** %200
 ```json
 {
     "success": "true",
@@ -75,7 +74,7 @@ Success 200
 }
 ```
 
-Email telah terdaftar 400
+**Email tidak bisa digunakan** %400
 ```json
 {
   "success"	: "false",
@@ -84,7 +83,7 @@ Email telah terdaftar 400
 }
 ```
 
-Telepon telah terdaftar 400
+**Telepon tidak bisa digunakan** %400
 ```json
 {
   "success"	: "false",
@@ -92,19 +91,13 @@ Telepon telah terdaftar 400
   "data" 		:	[]
 }
 ```
+
+### Login User
+> POST */login*
 ---------------
 
----------------
-### Activation 
----------------
----------------
-
----------------
-### CHECK FCM Token 
----------------
----------------
-
----------------
 ### Activation User
+> POST */user_activation*
 ---------------
----------------
+
+
