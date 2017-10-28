@@ -70,10 +70,12 @@ json
 ```json
 {
     "success": "true",
-    "message": "unverified",
-    "data": {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyMTFAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjNhNTUxZmE5Nzk2NzVmNTJlMDkzOGIwNWFiMThiZjliN2Q3ZDMzNTdlNGFhNDI3MDFkM2M5NzRlNzk2MTJhZWZlNTIxNjg5M2Q0MzUxZDNkIiwibGFzdF9sb2dpbiI6IjIwMTctMTAtMjcgMDY6MTU6MzkifQ.LmDNWZ3zyOaepGHoOUl-UCjp1Gwazzu8u8q1PoIqQBU"
-    }
+    "message": "Registration success",
+    "data": [
+        {
+            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyM0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoidGVzdGVyMyIsImxhc3RfbG9naW4iOiIyMDE3LTEwLTI4IDIyOjIxOjE3In0.VuUsYAP3qPMVBH7Fzbf_p0EQv1R9wThbX3PN7tK3nxo"
+        }
+    ]
 }
 ```
 
