@@ -7,7 +7,8 @@
 - [x] [Registration User](#registration-user)
 - [x] [Login User](#login-user)
 - [x] [Activation User](#activation-user)
-- [ ] [Dashboard]
+- [x] [Dashboard](#dashboard)
+- [x] [Update Profile](#update-profile)
 - [ ] [Order Progress]
 - [ ] [Order Complete]
 - [ ] [Add Order]
@@ -97,13 +98,53 @@ json
 }
 ```
 
+### Activation User
+> POST */user_activation*
+
+***Request: ***  
+*Need header token
+
+| PARAM (RAW) | Describe 											|
+| -----				| -------- 											|
+| code 				| Code from mail (required) 					|
+
+
+
+***Response:***   
+- **Aktivasi Berhasil** `STATUS:200`
+```json
+{
+  "success"	: "true",
+  "message"	: "user verificated",
+  "data" 	: []
+}
+```
+
+- **Aktivasi Gagal** `STATUS:400`
+```json
+{
+  "success"	: "false",
+  "message"	: "verification user failed",
+  "data" 	: []
+}
+```
+
+- **Authentikasi token gagal** `STATUS:400`
+```json
+{
+  "success"	: "false",
+  "message"	: "Authentication token failed",
+  "data" 	: []
+}
+```
+
 ### Login User
 > POST */login*
 
 ***Request: ***  
 *Need header auth
 
-| HEADER (BASIC) | Describe 											|
+| PARAM (RAW) | Describe 											|
 | -----				| -------- 											|
 | email 				| Email User (required) 					|
 | password 			| Password User (required) 						|
@@ -133,40 +174,112 @@ json
 }
 ```
 
-- **Login Gagal** `STATUS:401`
-```
-json
-```
-
----------------
-
-### Activation User
-> POST */user_activation*
-
-***Request: ***  
-*Need header auth
-
-| PARAM (RAW) | Describe 											|
-| -----				| -------- 											|
-| code 				| Code from mail (required) 					|
-
-
-
-***Response:***   
-- **Aktivasi Berhasil** `STATUS:200`
+- **Authentikasi token gagal** `STATUS:400`
 ```json
 {
+  "success"	: "false",
+  "message"	: "Authentication token failed",
+  "data" 	: []
+}
+```
+
+### Dasboard
+> POST */dashboard*
+
+***Request: ***  
+*Need header token
+*No parameter
+
+***Response:***   
+- **Autentikasi berhasil** `STATUS:200`
+```json
+{
+    "user": {
+        "id": "1",
+        "nama": "tester1",
+        "password": "tester1",
+        "email": "emailtester1@example.com",
+        "telp": "085700000001",
+        "tgl_lahir": null,
+        "tempat_lahir": null,
+        "alamat": null,
+        "created_at": "2017-10-28 22:16:24",
+        "status": "0",
+        "status_user": "nonaktif"
+    },
+    "banner": [
+        {
+            "image": "sitbanner3.jpg"
+        },
+        {
+            "image": "sitbanner1.jpg"
+        }
+    ],
+    "cs": {
+        "telp": "085604507383"
+    }
+}{
   "success"	: "true",
   "message"	: "user verificated",
   "data" 	: []
 }
 ```
-   
-- **Aktivasi Gagal** `STATUS:400`
+
+- **Authentikasi gagal** `STATUS:400`
 ```json
 {
   "success"	: "false",
-  "message"	: "verification user failed",
+  "message"	: "Authentication token failed",
+  "data" 	: []
+}
+```
+
+### Update Profile
+> POST */update_profile*
+
+***Request: ***  
+*Need header token
+***Parameter menyesuaikan data apa yg diubah***
+| Param (RAW) | Describe 											|
+| -----				| -------- 											|
+| nama 				| Nama user (optional) 					|
+| email 			| E-mail (optional) 						|
+| password 		| Password (optional) 					|
+| telp 				| telp (optional) 							|
+| tgl_lahir 		| tanggal lahir (optional) 					|
+| tempat_lahir 				| tempat_lahir (optional) 							|
+| alamat 				| alamat (optional) 							|
+
+***Response:***   
+- **Profile berhasil dirubah** `STATUS:200`
+```json
+{
+    "success": "true",
+    "message": "Successfully updating profile",
+    "data": {
+        "user": {
+            "id": "1",
+            "nama": "tester1",
+            "password": "tester1",
+            "email": "emailtester1@example.com",
+            "telp": "085694507293",
+            "tgl_lahir": null,
+            "tempat_lahir": null,
+            "alamat": null,
+            "created_at": "2017-10-28 22:16:24",
+            "status": "0",
+            "status_user": "nonaktif"
+        },
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6bnVsbCwicGFzc3dvcmQiOm51bGwsImxhc3RfbG9naW4iOm51bGx9.Dw_5nu5ZY6mppyUjslFq8PoxnrwgJw_WWIsVou7mKCo"
+    }
+}
+```
+
+- **Profile tidak berubah** `STATUS:400`
+```json
+{
+  "success"	: "false",
+  "message"	: "Nothing changed",
   "data" 	: []
 }
 ```
