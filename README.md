@@ -1,55 +1,306 @@
-# API ALONDRY
+# API DIJUALCEPAT
 > Url prefix  : *{sitename}*/api/user
 
 ## Contents
 
-- [x] [Check App Version](#check-app-version)
-- [x] [Registration User](#registration-user)
-- [x] [Login User](#login-user)
-- [x] [Activation User](#activation-user)
-- [x] [Dashboard](#dashboard)
-- [x] [Update Profile](#update-profile)
-- [ ] [Order Progress]
-- [ ] [Order Complete]
-- [ ] [Add Order]
-- [ ] [Order Process]
-- [ ] [Setting Profile]
+*default*
 
+- [ ] [Home](#home)
+- [ ] [Category](#category)
+- [ ] [Contact Us](#contact-us)
+- [ ] [About Us](#about-us)
+- [ ] [Detail Product](#detail-product)
+- [ ] [Registration User](#registration-user)
+- [ ] [Login User](#login-user)
+
+
+*saat user login*
+- [ ] [Home](#home)
+- [ ] [Detail Product](#detail-product)
+- [ ] [Contact Us](#contact-us)
+- [ ] [About Us](#about-us)
+- [ ] [Terms Condition](#terms-condition)
+- [ ] [Profile User](#profile-user)
+- [ ] [Product User](#product-user)
+- [ ] [Balance User](#balance-user)
+- [ ] [Topup User](#topup-user)
+- [ ] [Sell Product](#sell-product)
+- [ ] [Favorite Product](#favorite-product)
+- [ ] [Message User](#message-user)
 -----------
 
-### Check App Version
 
-> POST */check_version*
+### Home 
 
-***Request:***
 
-| Param (RAW) | Describe 							|
-| -----				| -------- 							|
-| application	| Aplikasi (required) 	|
-| version			| Versi (required) 			|
+***Request:***  
+> GET */home*
 
-***Response:***
+***Response:***   
 
-**New app version** `STATUS:200`
+- **Response Berhasil** `STATUS:200`
+***data yg ditampilkan berupa 4 iklan premium {premium}, 4 iklan teratas {top}, dan banner***
 ```json
 {
-    "success"   : "true",
-    "message"   : "new version available",
-    "data"      : []
-} 
-```
-
-**No Update version** `STATUS:200`
-```
-json
-{
-    "success"   : "true",
-    "message"   : "no updated available",
-    "data"      : []
+    "success": "true",
+    "message": "Berhasil mengakses home",
+    "data": [
+      "article":[
+        {
+          "id_product":"1",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image1.jpg",
+          "type_product":"premium"
+        },
+        {
+          "id_product":"2",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image2.jpg",
+          "type_product":"premium"
+        },
+        {
+          "id_product":"3",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image3.jpg",
+          "type_product":"premium"
+        },
+        {
+          "id_product":"4",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image4.jpg",
+          "type_product":"premium"
+        },
+        {
+          "id_product":"5",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image5.jpg",
+          "type_product":"top"
+        },
+        {
+          "id_product":"6",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image6.jpg",
+          "type_product":"top"
+        },
+        {
+          "id_product":"7",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image7.jpg",
+          "type_product":"top"
+        },
+        {
+          "id_product":"8",
+          "title_product":"Product Title",
+          "price_product":"100000",
+          "image_product":"http://dijualcepat.com/product/image8.jpg",
+          "type_product":"top"
+        }
+      ],
+      "banner":[
+        {"image":"banner_promo1.jpg"},
+        {"image":"banner_promo1.jpg"}
+      ]  
+    ]
 }
 ```
 
--------
+- **Response Gagal** `STATUS:400`
+```json
+{
+  "success" : "false",
+  "message" : "Tidak dapat mengakses home",
+  "data"  : []
+}
+```
+
+
+
+### Detail Product 
+
+***Request:***  
+> POST */detail_product*
+
+| PARAM (RAW) | Describe                      |
+| -----       | --------                      |
+| id_product  | id_product (required)         |
+
+***Response:***
+- **Response Berhasil** `STATUS:200`
+***data yang dikirim berupa list category dan subkategori***
+```json
+{
+  "success" : "true",
+  "message" : "Berhasil mengakses Detail Produk",
+  "data"  : 
+    {
+      "id_product":"1",
+      "title_product":"Nama Kategori",
+      "desc_product":"Lorem ipsum dolor sit amet",
+      "image_product":[
+          {"image":"http://dijualcepat.com/product/image1.jpg"},
+          {"image":"http://dijualcepat.com/product/image2.jpg"}
+      ],
+      "datepost_product":"2017-12-12",
+      "condition_product":"new",
+      "code_product":"USJ891",
+      "viewed_product":"2000",
+      "contacted_product":"10",
+      "location_product":"address product",
+      "lat_product":"maps latitude product",
+      "long_product":"maps longitude product",
+      "id_user":"2",
+      "name_user":"name user",
+      "datemember_user":"2017-12-12",
+      "image_user":"http://dijualcepat.com/user/image.jpg",
+      "comment_product":[
+        {
+          "id_user":"1",
+          "image_user":"http://dijualcepat.com/user/image1.jpg",
+          "comment_user":"lorem ipsum dolor sit amet",
+        },
+        {
+          "id_user":"2",
+          "image_user":"http://dijualcepat.com/user/image2.jpg",
+          "comment_user":"lorem ipsum dolor sit amet",
+        },
+      "related_product":[
+        {
+          "id_product":"1",
+          "image_product":"http://dijualcepat.com/product/image1.jpg",
+          "title_product":"Title Product",
+          "price_product":"20000"
+        },
+        {
+          "id_product":"1",
+          "image_product":"http://dijualcepat.com/product/image2.jpg",
+          "title_product":"Title Product",
+          "price_product":"20000"
+        }
+      ]
+    }
+}
+```
+- **Response Gagal** `STATUS:400`   
+```json
+{
+  "success" : "false",
+  "message" : "Gagal mengakses Detail Produk",
+  "data"  : []
+}
+```
+
+
+### Category 
+
+***Request:***  
+> GET */category*
+
+***Response:***
+- **Response Berhasil** `STATUS:200`
+***data yang dikirim berupa list category dan subkategori***
+```json
+{
+  "success" : "true",
+  "message" : "Berhasil mengakses Kategori",
+  "data"  : [
+    {
+      "id_category":"1",
+      "title_category":"Nama Kategori",
+      "icon_category":"Icon.jpg",
+      "subcategory":[]
+    },
+    {
+      "id_category":"2",
+      "title_category":"Nama Kategori",
+      "icon_category":"Icon.jpg",
+      "subcategory":[
+        {
+        "id_subcategory":"3",
+        "title_subcategory":"Nama Kategori",
+        "icon_subcategory":"Icon.jpg"
+        },
+        {
+        "id_subcategory":"4",
+        "title_subcategory":"Nama Kategori",
+        "icon_subcategory":"Icon.jpg"
+        }
+      ]
+    },
+  ]
+}
+```
+- **Response Gagal** `STATUS:400`   
+```json
+{
+  "success" : "false",
+  "message" : "Gagal mengakses Kategori",
+  "data"  : []
+}
+```
+
+### Contact Us 
+
+***Request:***  
+> GET */contact_us*
+
+***Response:***
+- **Response Berhasil** `STATUS:200`
+***data yang dikirim berupa list category dan subkategori***
+```json
+{
+  "success" : "true",
+  "message" : "Berhasil mengakses Contact Us",
+  "data"  : 
+    {
+      "content":"content contact us"
+    }
+}
+```
+- **Response Gagal** `STATUS:400`   
+```json
+{
+  "success" : "false",
+  "message" : "Gagal mengakses Contact Us",
+  "data"  : []
+}
+```
+
+### About Us 
+
+***Request:***  
+> GET */about_us*
+
+***Response:***
+- **Response Berhasil** `STATUS:200`
+***data yang dikirim berupa list category dan subkategori***
+```json
+{
+  "success" : "true",
+  "message" : "Berhasil mengakses About Us",
+  "data"  : 
+    {
+      "content":"content about us"
+    }
+}
+```
+- **Response Gagal** `STATUS:400`   
+```json
+{
+  "success" : "false",
+  "message" : "Gagal mengakses About Us",
+  "data"  : []
+}
+```
+
+
+-----------------------------
 
 ### Registration User 
 
@@ -57,12 +308,12 @@ json
 
 ***Request:***  
 
-| Param (RAW) | Describe 											|
-| -----				| -------- 											|
-| nama 				| Nama user (required) 					|
-| email 			| E-mail (required) 						|
-| password 		| Password (required) 					|
-| telp 				| telp (required) 							|
+| Param (RAW) | Describe                      |
+| -----       | --------                      |
+| nama        | Nama user (required)          |
+| email       | E-mail (required)             |
+| password    | Password (required)           |
+| telp        | telp (required)               |
 
 
 
@@ -83,58 +334,18 @@ json
 - **Email tidak bisa digunakan** `STATUS:400`
 ```json
 {
-  "success"	: "false",
-  "message"	: "that email is taken",
-  "data" 	: []
+  "success" : "false",
+  "message" : "that email is taken",
+  "data"  : []
 }
 ```
 
 - **Telepon tidak bisa digunakan** `STATUS:400`
 ```json
 {
-  "success"	: "false",
-  "message"	: "this phone number already used",
-  "data" 	: []
-}
-```
-
-### Activation User
-> POST */user_activation*
-
-***Request: ***  
-*Need header token
-
-| PARAM (RAW) | Describe 											|
-| -----				| -------- 											|
-| code 				| Code from mail (required) 					|
-
-
-
-***Response:***   
-- **Aktivasi Berhasil** `STATUS:200`
-```json
-{
-  "success"	: "true",
-  "message"	: "user verificated",
-  "data" 	: []
-}
-```
-
-- **Aktivasi Gagal** `STATUS:400`
-```json
-{
-  "success"	: "false",
-  "message"	: "verification user failed",
-  "data" 	: []
-}
-```
-
-- **Authentikasi token gagal** `STATUS:400`
-```json
-{
-  "success"	: "false",
-  "message"	: "Authentication token failed",
-  "data" 	: []
+  "success" : "false",
+  "message" : "this phone number already used",
+  "data"  : []
 }
 ```
 
@@ -144,30 +355,19 @@ json
 ***Request: ***  
 *Need header auth
 
-| PARAM (RAW) | Describe 											|
-| -----				| -------- 											|
-| email 				| Email User (required) 					|
-| password 			| Password User (required) 						|
+| PARAM (RAW) | Describe                      |
+| -----       | --------                      |
+| email         | Email User (required)           |
+| password      | Password User (required)            |
 
 
 
 ***Response:***   
-- **Login Berhasil, User Belum Terverifikasi** `STATUS:200`
+- **Login Berhasil** `STATUS:200`
 ```json
 {
     "success": "true",
-    "message": "unverified",
-    "data": {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyMTFAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjNhNTUxZmE5Nzk2NzVmNTJlMDkzOGIwNWFiMThiZjliN2Q3ZDMzNTdlNGFhNDI3MDFkM2M5NzRlNzk2MTJhZWZlNTIxNjg5M2Q0MzUxZDNkIiwibGFzdF9sb2dpbiI6IjIwMTctMTAtMjcgMDY6MTU6MzkifQ.LmDNWZ3zyOaepGHoOUl-UCjp1Gwazzu8u8q1PoIqQBU"
-    }
-}
-```
-
-- **Login Berhasil, User Sudah Terverifikasi** `STATUS:200`
-```json
-{
-    "success": "true",
-    "message": "verified",
+    "message": "Login success",
     "data": {
         "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImVtYWlsdGVzdGVyMTFAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IjNhNTUxZmE5Nzk2NzVmNTJlMDkzOGIwNWFiMThiZjliN2Q3ZDMzNTdlNGFhNDI3MDFkM2M5NzRlNzk2MTJhZWZlNTIxNjg5M2Q0MzUxZDNkIiwibGFzdF9sb2dpbiI6IjIwMTctMTAtMjcgMDY6MTU6MzkifQ.LmDNWZ3zyOaepGHoOUl-UCjp1Gwazzu8u8q1PoIqQBU"
     }
@@ -177,109 +377,8 @@ json
 - **Authentikasi token gagal** `STATUS:400`
 ```json
 {
-  "success"	: "false",
-  "message"	: "Authentication token failed",
-  "data" 	: []
-}
-```
-
-### Dasboard
-> POST */dashboard*
-
-***Request: ***  
-*Need header token
-*No parameter
-
-***Response:***   
-- **Autentikasi berhasil** `STATUS:200`
-```json
-{
-    "user": {
-        "id": "1",
-        "nama": "tester1",
-        "password": "tester1",
-        "email": "emailtester1@example.com",
-        "telp": "085700000001",
-        "tgl_lahir": null,
-        "tempat_lahir": null,
-        "alamat": null,
-        "created_at": "2017-10-28 22:16:24",
-        "status": "0",
-        "status_user": "nonaktif"
-    },
-    "banner": [
-        {
-            "image": "sitbanner3.jpg"
-        },
-        {
-            "image": "sitbanner1.jpg"
-        }
-    ],
-    "cs": {
-        "telp": "085604507383"
-    }
-}{
-  "success"	: "true",
-  "message"	: "user verificated",
-  "data" 	: []
-}
-```
-
-- **Authentikasi gagal** `STATUS:400`
-```json
-{
-  "success"	: "false",
-  "message"	: "Authentication token failed",
-  "data" 	: []
-}
-```
-
-### Update Profile
-> POST */update_profile*
-
-***Request: ***  
-*Need header token
-***Parameter menyesuaikan data apa yg diubah***
-| Param (RAW) | Describe 											|
-| -----				| -------- 											|
-| nama 				| Nama user (optional) 					|
-| email 			| E-mail (optional) 						|
-| password 		| Password (optional) 					|
-| telp 				| telp (optional) 							|
-| tgl_lahir 		| tanggal lahir (optional) 					|
-| tempat_lahir 				| tempat_lahir (optional) 							|
-| alamat 				| alamat (optional) 							|
-
-***Response:***   
-- **Profile berhasil dirubah** `STATUS:200`
-```json
-{
-    "success": "true",
-    "message": "Successfully updating profile",
-    "data": {
-        "user": {
-            "id": "1",
-            "nama": "tester1",
-            "password": "tester1",
-            "email": "emailtester1@example.com",
-            "telp": "085694507293",
-            "tgl_lahir": null,
-            "tempat_lahir": null,
-            "alamat": null,
-            "created_at": "2017-10-28 22:16:24",
-            "status": "0",
-            "status_user": "nonaktif"
-        },
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6bnVsbCwicGFzc3dvcmQiOm51bGwsImxhc3RfbG9naW4iOm51bGx9.Dw_5nu5ZY6mppyUjslFq8PoxnrwgJw_WWIsVou7mKCo"
-    }
-}
-```
-
-- **Profile tidak berubah** `STATUS:400`
-```json
-{
-  "success"	: "false",
-  "message"	: "Nothing changed",
-  "data" 	: []
+  "success" : "false",
+  "message" : "Authentication token failed",
+  "data"  : []
 }
 ```
